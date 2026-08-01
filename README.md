@@ -1,4 +1,4 @@
-# Gemini RTL Fix
+# Gemini Notebok RTL Fixer
 
 סקריפט שמסדר את הכיוון של טקסט בעברית בתשובות של Gemini Notebook. 
 
