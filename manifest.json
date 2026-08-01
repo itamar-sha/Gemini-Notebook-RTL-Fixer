@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Notebook RTL Fixer",
+  "version": "1.0",
+  "description": "Automatically fixes Hebrew RTL on Gemini Notebook",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://notebook.google.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ]
+}
