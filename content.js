@@ -9,10 +9,22 @@ function fixRTL() {
             el.dataset.rtlFixed = 'true';
         }
     });
+
+    document.querySelectorAll('.katex, .katex-display, math, mjx-container, [class*="math"]').forEach(mathEl => {
+        if (mathEl.dataset.mathLtrFixed) return;
+        
+        mathEl.style.direction = 'ltr';
+        mathEl.style.unicodeBidi = 'isolate';
+        
+        if (window.getComputedStyle(mathEl).display === 'inline') {
+            mathEl.style.display = 'inline-block';
+        }
+        
+        mathEl.dataset.mathLtrFixed = 'true';
+    });
 }
 
 fixRTL();
-
 
 const observer = new MutationObserver(fixRTL);
 observer.observe(document.body, { childList: true, subtree: true });
